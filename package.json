@@ -6,7 +6,7 @@
   "main": "src/index.js",
   "dependencies": {
     "amplitude-js": "^5.9.0",
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "axios-adapter-hmac": "^0.1.1",
     "blueimp-md5": "^2.10.0",
     "bootstrap": "^5.0.0-beta2",
