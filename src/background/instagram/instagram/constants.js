@@ -1,5 +1,7 @@
 export const API_URL = 'https://i.instagram.com/api/v1/'
 export const API_URL_v2 = 'https://i.instagram.com/api/v2/'
+export const API_URL_web = 'https://www.instagram.com/web/'
+
 export const LOGIN_URL = API_URL + 'accounts/login/'
 
 // # I have more devices here:
@@ -114,9 +116,21 @@ export const REQUEST_HEADERS = {
   'X-IG-Connection-Type': 'WIFI',
   'X-FB-HTTP-Engine': 'Liger',
   Accept: '*/*',
-  'Accept-Language': 'en-US',
-  'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+  Origin: 'https://www.instagram.com',
+  Referer: 'https://www.instagram.com',
 
+  'sec-fetch-dest': 'empty',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-site': 'same-origin',
+  'sec-gpc': 1,
+  'dnt': 1,
+
+  'Accept-Language': 'en-US',
+  'Content-type': 'application/json; charset=utf-8',
+
+  'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 11_1_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36',
+
+  'cross-origin-opener-policy': 'same-origin-allow-popups;report-to="coop"',
   'Accept-Encoding': 'gzip,deflate',
   Connection: 'Keep-Alive',
   Cookie2: '$Version=1',

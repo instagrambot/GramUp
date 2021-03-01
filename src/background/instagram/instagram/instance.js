@@ -1,6 +1,7 @@
 import {
   API_URL,
   API_URL_v2,
+  API_URL_web,
   DEVICE,
   DEVICES,
   USER_AGENT_BASE,
@@ -219,10 +220,10 @@ export default class Instagram {
     return response
   }
 
-  async _request (endpoint, method = 'GET', post_data, extra_headers = {}, { v2 = false, form = false } = {}) {
+  async _request (endpoint, method = 'GET', post_data, extra_headers = {}, { v2 = false, web = false, doAppendRootURL = true, form = false, doPrefix = true } = {}) {
     const headers = prefixUnsecureHeaders({
-      'User-Agent': this.user_agent,
       ...REQUEST_HEADERS,
+      ...(web ? {} : { 'User-Agent': this.user_agent }),
       ...extra_headers,
     }, 'replace')
 
@@ -236,7 +237,8 @@ export default class Instagram {
       post_data = bodyFormData
     }
 
-    const root = v2 ? API_URL_v2 : API_URL
+    const rootURL = web ? API_URL_web : v2 ? API_URL_v2 : API_URL
+    const root = doAppendRootURL ? rootURL : ''
 
     const response = await axios({
       url: root + endpoint,

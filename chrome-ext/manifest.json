@@ -22,7 +22,8 @@
     "notifications",
     "webRequest",
     "webRequestBlocking",
-    "https://i.instagram.com/"
+    "https://i.instagram.com/",
+    "https://web.instagram.com/"
   ],
   "externally_connectable": {
     "matches": [

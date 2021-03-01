@@ -3,6 +3,13 @@ export const FORBIDDEN_HEADERS = [
   'Connection',
   'Cookie2',
   'User-Agent',
+  'Origin',
+  'Referer',
+  'sec-fetch-dest',
+  'sec-fetch-mode',
+  'sec-fetch-site',
+  'sec-gpc',
+  'dnt',
 ]
 
 export const PREFIX = 'X-Instaweb-'

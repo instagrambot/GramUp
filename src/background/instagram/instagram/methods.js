@@ -425,3 +425,15 @@ export const save_media = (self, media_id, module_name = 'feed_timeline') => {
 export const unsave_media = (self, media_id) => {
   return self.send_request(`media/${media_id}/unsave/`, {})
 }
+
+export const get_url = (self, url) => {
+  return self.send_request(url, null, { doAppendRootURL: false })
+}
+
+export const like_web = (self, media_id) => {
+  return self.send_request(`likes/${media_id}/like/`, {}, { web: true, doPrefix: false })
+}
+
+export const reels_tray = (self, url) => {
+  return self.send_request('feed/reels_tray/', null, { doPrefix: true })
+}

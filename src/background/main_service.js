@@ -70,8 +70,9 @@ const replyToRequest = (sender, req_id, data) => {
   if (!username || !password) {
     console.log('No credentials!')
     await clearCredentials()
-    // const user = await instagram.login_via_cookie()
-    // console.log('user', user)
+
+    const user = await instagram.login_via_cookie()
+    console.log('user', user)
 
     instagram._init_handler()
   } else {
